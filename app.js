@@ -36,8 +36,7 @@ app.use(session({
     maxAge: (1000 * 60 * 100)
   },
   store: MongoStore.create({
-    // mongoUrl: 'mongodb://localhost:27017/review',
-    mongoUrl: 'mongodb+srv://naralapraveen:motog4plus@nodejsprojects.ktpgu.mongodb.net/review',
+    mongoUrl: 'mongodb://localhost:27017/review',
     autoRemove: 'disabled',
   }, (err) => {
     console.log(err || 'connect-mongodb setup');
