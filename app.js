@@ -7,10 +7,8 @@ require('dotenv').config();
 // connecting to database
 const connectDB = require('./config/connect');
 // local database
-// const dburl = 'mongodb://localhost:27017/Employee-Review-System';
-// atlas
-const atlasUrl = 'mongodb+srv://naralapraveen:motog4plus@nodejsprojects.ktpgu.mongodb.net/employee-review-system?retryWrites=true&w=majority';
-connectDB(atlasUrl);
+const dburl = 'mongodb://localhost:27017/Employee-Review-System';
+connectDB(dbUrl);
 
 // passport setup session cookie
 const session = require('express-session');
