@@ -1,0 +1,46 @@
+<%- include('navbar'); %>
+
+  <h1 class="text-center mt-4">List of employees</h1>
+
+  <div class="container mt-5">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Password</th>
+          <th scope="col">is Admin?</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0;i < employees.length;i++){ %>
+          <tr>
+            <th scope="row">
+              <%=employees[i].name %>
+            </th>
+            <td>
+              <%=employees[i].email %>
+            </td>
+            <td>
+              <%=employees[i].password %>
+            </td>
+            <td>
+              <% if(employees[i].isAdmin){ %>
+                Yes
+                <% } else{ %>
+                  <a href="/admin/make-admin/<%=employees[i]._id%>" class="btn btn-success">
+                    Make Admin
+                  </a>
+                  <% } %>
+            </td>
+            <td><a href="/admin/delete-employee/<%=employees[i]._id%>" class="btn btn-danger">
+                Delete
+              </a>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Employee Review System</a>
+  <ul class="navbar-nav ml-auto">
+
+    <li class="nav-item">
+      <a class="nav-link text-light" href="/">My Reviews</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" href="/users/mywork">My Work</a>
+    </li>
+    <% if(locals.user.isAdmin){ %>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/admin/admin-page">Assign Work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/admin/view-employees">Employee List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="/users/register">Register</a>
+      </li>
+      <% } %>
+
+        <li class="nav-item">
+          <a class="nav-link text-light" href="/users/logout">
+            Logout from <%= user.name %>
+          </a>
+        </li>
+
+  </ul>
+</nav>
