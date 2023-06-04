@@ -7,7 +7,7 @@ require('dotenv').config();
 // connecting to database
 const connectDB = require('./config/connect');
 // local database
-const dburl = 'mongodb://localhost:27017/Employee-Review-System';
+const dbUrl = process.env.mongoDBUrl;
 connectDB(dbUrl);
 
 // passport setup session cookie
@@ -36,7 +36,7 @@ app.use(session({
     maxAge: (1000 * 60 * 100)
   },
   store: MongoStore.create({
-    mongoUrl: 'mongodb://localhost:27017/review',
+    mongoUrl: process.env.mongoDBUrl,
     autoRemove: 'disabled',
   }, (err) => {
     console.log(err || 'connect-mongodb setup');
